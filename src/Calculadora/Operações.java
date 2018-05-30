@@ -12,12 +12,23 @@ package Calculadora;
 public class Operações {
 
     public boolean binaria;
-
-    protected String operação(Object num1) {
-        return null;
+    public String nome;
+    
+    @Override 
+    public boolean equals(Object x){
+         if(x instanceof Operações){
+        Operações r = (Operações)x;
+          if(nome == r.nome){
+             return true;
+          }
+         } 
+          return false;
     }
-
-    protected String operação(Object num1, Object num2) {
-        return null;
+    @Override 
+    public String toString(){
+        return nome;
+    }
+    public boolean binaria(){
+         return binaria;
     }
 }

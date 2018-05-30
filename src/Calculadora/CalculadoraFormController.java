@@ -20,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javax.swing.JOptionPane;
+
 /**
  * FXML Controller class
  *
@@ -39,27 +40,33 @@ public class CalculadoraFormController implements Initializable {
     private Button calcularBtn;
     @FXML
     private Button usarBtn;
-    ArrayList<Operações> operações = new ArrayList<Operações>();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
-        operações.add(new soma());
-        operações.add(new subtração());
-        operações.add(new divisão());
-        operações.add(new multiplicação());
-        operações.add(new exponecial());
-        operações.add(new fatorial());
-        operações.add(new porcentagem());
-        operações.add(new negativo());
+        ArrayList<IOperações> ioperações = new ArrayList<IOperações>();
+        ioperações.add(new soma());
+        ioperações.add(new subtração());
+        ioperações.add(new divisão());
+        ioperações.add(new multiplicação());
+        ioperações.add(new exponecial());
+        ioperações.add(new fatorial());
+        ioperações.add(new porcentagem());
+        ioperações.add(new negativo());
 
-        operaçãoBox.getItems().addAll(operações);
+        operaçãoBox.getItems().addAll(ioperações);
         operaçãoBox.getSelectionModel().selectedItemProperty().addListener((obs, ant, nov) -> {
-            Operações selecionada = (Operações) operaçãoBox.getSelectionModel().getSelectedItem();
-            num2Text.disableProperty().set(!selecionada.binaria);
+            IOperações selecionada = (IOperações) operaçãoBox.getSelectionModel().getSelectedItem();
+            num2Text.disableProperty().set(!selecionada.binaria());
         });
     }
 
     public void calcularBtn_Clicked() {
-          
+
+        IOperações selecionada = (IOperações) operaçãoBox.getSelectionModel().getSelectedItem();
+        if (selecionada.binaria()) {
+            resultadoText.setText(selecionada.operação(num1Text.getText(), num2Text.getText()));
+        } else {
+            resultadoText.setText(selecionada.operação(num1Text.getText()));
+        }
     }
 }

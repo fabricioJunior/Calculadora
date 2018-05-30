@@ -1,24 +1,28 @@
 package Calculadora.operações;
 
+import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
-public class porcentagem extends Operações {
+public class porcentagem extends Operações implements IOperações{
 
     public porcentagem() {
-        binaria = false;
+        nome  = "% Porcentagem";
+    }
+    @Override
+    public String operação(String num1) {
+        return String.valueOf(Float.parseFloat(num1) / 100);
     }
 
     @Override
-    public String operação(Object num1) {
-        return String.valueOf(((float) num1) / 100);
+    public String operação(String num1, String num2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public String toString() {
-        return "% Porcentagem";
+     @Override
+    public boolean binaria() {
+            return false;
     }
 }

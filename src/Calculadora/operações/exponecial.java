@@ -5,27 +5,30 @@
  */
 package Calculadora.operações;
 
+import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
-public class exponecial extends Operações {
+public class exponecial extends Operações implements IOperações  {
 
     public exponecial() {
         binaria = true;
+        nome = "** Exponencial";
     }
 
     @Override
-    public String operação(Object num1, Object num2) {
-        double n1 = (double) num1;
-        double n2 = (double) num2;
+    public String operação(String num1, String num2) {
+        double n1 = Double.parseDouble(num1);
+        double n2 = Double.parseDouble(num2);
         return String.valueOf(Math.pow(n1, n2));
     }
 
     @Override
-    public String toString() {
-        return "** Exponencial";
+    public String operação(String num1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }

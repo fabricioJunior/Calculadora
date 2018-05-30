@@ -5,27 +5,29 @@
  */
 package Calculadora.operações;
 
+import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
-public class divisão extends Operações {
+public class divisão extends Operações implements IOperações{
 
     public divisão() {
         binaria = true;
+        nome  = "/ Divisão";
     }
 
     @Override
-    public String operação(Object num1, Object num2) {
-        float n1 = (float) num1;
-        float n2 = (float) num2;        
+    public String operação(String num1, String num2) {
+        float n1 = Float.parseFloat(num1);
+        float n2 = Float.parseFloat(num2);        
         return String.valueOf(n1 / n2);
     }
-
-    @Override    
-    public String toString() {
-        return "/ Divisão";
+    @Override
+    public String operação(String num1){
+        throw new UnsupportedOperationException("Not supported yet.");
     }
+    
 }

@@ -5,27 +5,30 @@
  */
 package Calculadora.operações;
 
+import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
-public class subtração extends Operações {
+public class subtração extends Operações implements IOperações {
 
     public subtração() {
         binaria = true;
+        nome =  "- Subtração";
     }
 
     @Override
-    public String operação(Object num1, Object num2) {
-        float n1 = (float) num1;
-        float n2 = (float) num2;
+    public String operação(String num1, String num2) {
+        float n1 = Float.parseFloat(num1);
+        float n2 = Float.parseFloat(num2);
         return String.valueOf(n1 - n2);
     }
-
+    
     @Override
-    public String toString() {
-        return "- Subtração";
+    public String operação(String num1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }
