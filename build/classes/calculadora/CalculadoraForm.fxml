@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" blendMode="SRC_ATOP" prefHeight="101.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculadora.CalculadoraFormController">
+<AnchorPane id="AnchorPane" prefHeight="101.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculadora.CalculadoraFormController">
    <children>
       <BorderPane blendMode="SRC_ATOP" prefHeight="100.0" prefWidth="598.0">
          <top>
