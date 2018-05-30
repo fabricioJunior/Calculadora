@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="101.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculadora.CalculadoraFormController">
+<AnchorPane id="AnchorPane" blendMode="SRC_ATOP" prefHeight="101.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculadora.CalculadoraFormController">
    <children>
-      <BorderPane prefHeight="100.0" prefWidth="598.0">
+      <BorderPane blendMode="SRC_ATOP" prefHeight="100.0" prefWidth="598.0">
          <top>
             <MenuBar prefHeight="25.0" prefWidth="598.0" BorderPane.alignment="CENTER" />
          </top>
@@ -17,9 +17,9 @@
       <TextField fx:id="num1Text" layoutX="14.0" layoutY="45.0" prefHeight="25.0" prefWidth="78.0" />
       <ComboBox fx:id="operaçãoBox" layoutX="109.0" layoutY="45.0" prefWidth="150.0" />
       <TextField fx:id="num2Text" layoutX="268.0" layoutY="45.0" prefHeight="25.0" prefWidth="78.0" />
-      <Button fx:id="calcularBtn" layoutX="355.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#calcularBtn_Clicked" text="Calcular" />
-      <TextField fx:id="resultadoText" layoutX="420.0" layoutY="45.0" prefHeight="25.0" prefWidth="66.0" />
-      <Button fx:id="usarBtn" layoutX="502.0" layoutY="45.0" mnemonicParsing="false" text="Usar" />
+      <Button fx:id="calcularBtn" layoutX="355.0" layoutY="45.0" mnemonicParsing="false" onKeyPressed="#calcularBtn_KeyPressed" onMouseClicked="#calcularBtn_Clicked" text="Calcular" />
+      <TextField fx:id="resultadoText" editable="false" layoutX="420.0" layoutY="45.0" prefHeight="25.0" prefWidth="66.0" />
+      <Button fx:id="usarBtn" layoutX="502.0" layoutY="45.0" mnemonicParsing="false" onKeyPressed="#usarBtn_KeyPressed" onMouseClicked="#usarBtn_Clicked" text="Usar" />
       <Label layoutX="240.0" layoutY="-3.0" text="Calculadora">
          <font>
             <Font size="20.0" />

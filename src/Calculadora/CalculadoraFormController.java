@@ -16,9 +16,12 @@ import Calculadora.operações.divisão;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import static javafx.scene.input.KeyCode.ENTER;
+import javafx.scene.input.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -43,6 +46,7 @@ public class CalculadoraFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         ArrayList<IOperações> ioperações = new ArrayList<IOperações>();
         ioperações.add(new soma());
         ioperações.add(new subtração());
@@ -52,12 +56,13 @@ public class CalculadoraFormController implements Initializable {
         ioperações.add(new fatorial());
         ioperações.add(new porcentagem());
         ioperações.add(new negativo());
-
+       
         operaçãoBox.getItems().addAll(ioperações);
         operaçãoBox.getSelectionModel().selectedItemProperty().addListener((obs, ant, nov) -> {
             IOperações selecionada = (IOperações) operaçãoBox.getSelectionModel().getSelectedItem();
             num2Text.disableProperty().set(!selecionada.binaria());
         });
+        operaçãoBox.getSelectionModel().selectFirst();
     }
 
     public void calcularBtn_Clicked() {
@@ -67,6 +72,25 @@ public class CalculadoraFormController implements Initializable {
             resultadoText.setText(selecionada.operação(num1Text.getText(), num2Text.getText()));
         } else {
             resultadoText.setText(selecionada.operação(num1Text.getText()));
+        }
+    }
+
+    public void usarBtn_Clicked() {
+        if (resultadoText.getText() != null) {
+            num1Text.setText(resultadoText.getText());
+        }
+    }
+
+    public void usarBtn_KeyPressed(KeyEvent key) {
+        if (key.getCode() == ENTER) {
+            usarBtn_Clicked();
+        }
+    }
+
+    public void calcularBtn_KeyPressed(KeyEvent key) {
+
+        if (key.getCode() == ENTER) {
+            calcularBtn_Clicked();
         }
     }
 }

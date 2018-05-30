@@ -23,7 +23,7 @@ public class fatorial extends Operações implements IOperações{
     public String operação(String num1) {
         long retorno = 1;
         int n1 = Integer.parseInt(num1);
-        for (int x = 1; x < n1; x++) {
+        for (int x = 1; x <= n1; x++) {
             retorno = retorno * x;
         }
         return String.valueOf(retorno);
