@@ -10,15 +10,14 @@ package Calculadora;
  * @author Fabricio Junior
  */
 public class Operações {
+
     public boolean binaria;
-    
-    protected float operação(float num1, float num2){
-       return 0;
+
+    protected String operação(Object num1) {
+        return null;
     }
-    protected float operação(float num1){
-        return 0;
-    }
-    protected long operação(int num1){
-       return 0;
+
+    protected String operação(Object num1, Object num2) {
+        return null;
     }
 }

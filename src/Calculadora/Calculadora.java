@@ -5,6 +5,8 @@
  */
 package Calculadora;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fabricio Junior
@@ -15,7 +17,10 @@ public class Calculadora {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        Gui start = new Gui();
     
+
+        start.Show();
+    }
+
 }

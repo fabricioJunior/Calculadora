@@ -3,23 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Calculadora;
+package Calculadora.operações;
+
+import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
 public class multiplicação extends Operações {
-    
-     public multiplicação(){
-       binaria  = true;
+
+    public multiplicação() {
+        binaria = true;
     }
+
     @Override
-    public float operação(float num1, float num2){
-            return num1 * num2;
+    public String operação(Object num1, Object num2) {
+        float n1 = (float) num1;
+        float n2 = (float) num2;
+        return String.valueOf(n1 * n2);
     }
-    @Override 
-    public String toString(){
+
+    @Override
+    public String toString() {
         return "* Multiplicação";
     }
 }

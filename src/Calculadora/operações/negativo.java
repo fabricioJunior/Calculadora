@@ -3,20 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Calculadora;
+package Calculadora.operações;
+
+import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
 public class negativo extends Operações {
-    
-    public negativo(){
-       binaria = false; 
+
+    public negativo() {
+        binaria = false;
     }
+
     @Override
-    public float operação(float num1){
-       return num1 * -1 ;
+    public String operação(Object num1) {
+        return String.valueOf(((float) num1) * -1);
     }
-     
+
+    @Override
+    public String toString() {
+        return "- Negativo";
+    }
 }
