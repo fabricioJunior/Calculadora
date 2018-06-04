@@ -12,17 +12,17 @@ import Calculadora.Operações;
  *
  * @author Fabricio Junior
  */
-public class subtração extends Operações implements IOperações {
+public class Multiplicação extends Operações implements IOperações {
 
-    public subtração() {
+    public Multiplicação() {
         binaria = true;
-        nome =  "- Subtração";
+        nome = "* Multiplicação";
     }
-
     @Override
     public String operação(String num1, String num2) {
-        float n1 = Float.parseFloat(num1);
+        float n1 =  Float.parseFloat(num1) ;
         float n2 = Float.parseFloat(num2);
-        return String.valueOf(n1 - n2);
+        return String.valueOf(n1 * n2);
     }
+
 }

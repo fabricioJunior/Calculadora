@@ -12,9 +12,9 @@ import Calculadora.Operações;
  *
  * @author Fabricio Junior
  */
-public class negativo extends Operações implements IOperações  {
+public class Negativo extends Operações implements IOperações  {
 
-    public negativo() {
+    public Negativo() {
         binaria = false;
         nome = "- Negativo";
     }

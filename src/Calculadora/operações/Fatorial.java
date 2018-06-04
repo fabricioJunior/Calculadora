@@ -13,9 +13,9 @@ import java.text.DecimalFormat;
  *
  * @author Fabricio Junior
  */
-public class fatorial extends Operações implements IOperações {
+public class Fatorial extends Operações implements IOperações {
 
-    public fatorial() {
+    public Fatorial() {
         binaria = false;
         nome = "! Fatorial";
     }

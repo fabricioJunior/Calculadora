@@ -12,9 +12,9 @@ import Calculadora.Operações;
  *
  * @author Fabricio Junior
  */
-public class soma extends Operações implements IOperações  {
+public class Soma extends Operações implements IOperações  {
 
-    public soma() {
+    public Soma() {
         binaria = true;
         nome  = "+ Soma";
     }

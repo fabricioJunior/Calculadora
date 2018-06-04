@@ -7,9 +7,9 @@ import Calculadora.Operações;
  *
  * @author Fabricio Junior
  */
-public class porcentagem extends Operações implements IOperações{
+public class Porcentagem extends Operações implements IOperações{
 
-    public porcentagem() {
+    public Porcentagem() {
         nome  = "% Porcentagem";
     }
     @Override
