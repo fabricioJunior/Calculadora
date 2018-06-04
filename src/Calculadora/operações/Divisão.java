@@ -9,10 +9,12 @@ import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
- *
+ *  
  * @author Fabricio Junior
+ * 
+ * Classe que herda da classe Operações 
  */
-public class Divisão extends Operações implements IOperações{
+public class Divisão extends Operações {
 
     public Divisão() {
         binaria = true;
