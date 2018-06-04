@@ -22,9 +22,4 @@ public class negativo extends Operações implements IOperações  {
     public String operação(String num1) {
         return String.valueOf(Float.parseFloat(num1) * -1);
     }
-
-    @Override
-    public String operação(String num1, String num2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

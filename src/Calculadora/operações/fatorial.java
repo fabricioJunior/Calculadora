@@ -30,9 +30,5 @@ public class fatorial extends Operações implements IOperações {
         return String.valueOf(retorno);
     }
 
-    @Override
-    public String operação(String num1, String num2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

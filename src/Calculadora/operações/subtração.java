@@ -25,10 +25,4 @@ public class subtração extends Operações implements IOperações {
         float n2 = Float.parseFloat(num2);
         return String.valueOf(n1 - n2);
     }
-    
-    @Override
-    public String operação(String num1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
