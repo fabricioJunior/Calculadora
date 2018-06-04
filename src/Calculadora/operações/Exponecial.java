@@ -12,9 +12,9 @@ import Calculadora.Operações;
  *
  * @author Fabricio Junior
  */
-public class exponecial extends Operações implements IOperações  {
+public class Exponecial extends Operações implements IOperações  {
 
-    public exponecial() {
+    public Exponecial() {
         binaria = true;
         nome = "** Exponencial";
     }
@@ -25,10 +25,4 @@ public class exponecial extends Operações implements IOperações  {
         double n2 = Double.parseDouble(num2);
         return String.valueOf(Math.pow(n1, n2));
     }
-
-    @Override
-    public String operação(String num1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

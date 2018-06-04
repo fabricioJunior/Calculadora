@@ -12,19 +12,14 @@ import Calculadora.Operações;
  *
  * @author Fabricio Junior
  */
-public class negativo extends Operações implements IOperações  {
+public class Negativo extends Operações implements IOperações  {
 
-    public negativo() {
+    public Negativo() {
         binaria = false;
         nome = "- Negativo";
     }
     @Override
     public String operação(String num1) {
         return String.valueOf(Float.parseFloat(num1) * -1);
-    }
-
-    @Override
-    public String operação(String num1, String num2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

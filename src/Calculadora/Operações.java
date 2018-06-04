@@ -9,21 +9,18 @@ package Calculadora;
  *
  * @author Fabricio Junior
  */
-public class Operações {
+public abstract class Operações {
 
     public boolean binaria;
     public String nome;
     
-    @Override 
-    public boolean equals(Object x){
-         if(x instanceof Operações){
-        Operações r = (Operações)x;
-          if(nome == r.nome){
-             return true;
-          }
-         } 
-          return false;
+    public String operação(String num1){
+      return null;
     }
+    public String operação(String num1, String num2){
+      return null;
+    }
+    
     @Override 
     public String toString(){
         return nome;

@@ -5,7 +5,7 @@
  */
 package Calculadora;
 
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -18,8 +18,6 @@ public class Calculadora {
      */
     public static void main(String[] args) {
         Gui start = new Gui();
-    
-
         start.Show();
     }
 

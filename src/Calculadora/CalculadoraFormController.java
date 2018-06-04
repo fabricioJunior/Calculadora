@@ -5,13 +5,13 @@
  */
 package Calculadora;
 
-import Calculadora.operações.exponecial;
-import Calculadora.operações.negativo;
-import Calculadora.operações.fatorial;
-import Calculadora.operações.porcentagem;
-import Calculadora.operações.multiplicação;
-import Calculadora.operações.subtração;
-import Calculadora.operações.soma;
+import Calculadora.operações.Exponecial;
+import Calculadora.operações.Negativo;
+import Calculadora.operações.Fatorial;
+import Calculadora.operações.Porcentagem;
+import Calculadora.operações.Multiplicação;
+import Calculadora.operações.Subtração;
+import Calculadora.operações.Soma;
 import Calculadora.operações.Divisão;
 import java.net.URL;
 import java.util.ArrayList;
@@ -49,14 +49,14 @@ public class CalculadoraFormController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         ArrayList<IOperações> ioperações = new ArrayList<IOperações>();
-        ioperações.add(new soma());
-        ioperações.add(new subtração());
+        ioperações.add(new Soma());
+        ioperações.add(new Subtração());
         ioperações.add(new Divisão());
-        ioperações.add(new multiplicação());
-        ioperações.add(new exponecial());
-        ioperações.add(new fatorial());
-        ioperações.add(new porcentagem());
-        ioperações.add(new negativo());
+        ioperações.add(new Multiplicação());
+        ioperações.add(new Exponecial());
+        ioperações.add(new Fatorial());
+        ioperações.add(new Porcentagem());
+        ioperações.add(new Negativo());
 
         operaçãoBox.getItems().addAll(ioperações);
         operaçãoBox.getSelectionModel().selectedItemProperty().addListener((obs, ant, nov) -> {
@@ -69,16 +69,23 @@ public class CalculadoraFormController implements Initializable {
     public void calcularBtn_Clicked() {
 
         num1Text.setText(Filtro(num1Text.getText()));
+        // recupero  a classe selecionada pelo usuário no comboBox  
         IOperações selecionada = (IOperações) operaçãoBox.getSelectionModel().getSelectedItem();
-        if (selecionada.binaria()) {
-            num2Text.setText(Filtro(num2Text.getText()));
-            if (ContemLetrasNum1() == false && ContemLetrasNum2() == false) {
-                resultadoText.setText(selecionada.operação(num1Text.getText(), num2Text.getText()));
-            }
-
+        if (num1Text.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Digite um valor na primeira área de texto", "Informação", JOptionPane.INFORMATION_MESSAGE);
+        } else if (num2Text.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Digite um valor na segunda área de texto", "Informação", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            if (!ContemLetrasNum1()) {
-                resultadoText.setText(selecionada.operação(num1Text.getText()));
+            if (selecionada.binaria()) {
+                num2Text.setText(Filtro(num2Text.getText()));
+                if (ContemLetrasNum1() == false && ContemLetrasNum2() == false) {
+                    resultadoText.setText(selecionada.operação(num1Text.getText(), num2Text.getText()));
+                }
+
+            } else {
+                if (!ContemLetrasNum1()) {
+                    resultadoText.setText(selecionada.operação(num1Text.getText()));
+                }
             }
         }
     }
