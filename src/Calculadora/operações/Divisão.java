@@ -12,9 +12,9 @@ import Calculadora.Operações;
  *
  * @author Fabricio Junior
  */
-public class divisão extends Operações implements IOperações{
+public class Divisão extends Operações implements IOperações{
 
-    public divisão() {
+    public Divisão() {
         binaria = true;
         nome  = "/ Divisão";
     }

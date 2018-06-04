@@ -12,7 +12,7 @@ import Calculadora.operações.porcentagem;
 import Calculadora.operações.multiplicação;
 import Calculadora.operações.subtração;
 import Calculadora.operações.soma;
-import Calculadora.operações.divisão;
+import Calculadora.operações.Divisão;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,7 +51,7 @@ public class CalculadoraFormController implements Initializable {
         ArrayList<IOperações> ioperações = new ArrayList<IOperações>();
         ioperações.add(new soma());
         ioperações.add(new subtração());
-        ioperações.add(new divisão());
+        ioperações.add(new Divisão());
         ioperações.add(new multiplicação());
         ioperações.add(new exponecial());
         ioperações.add(new fatorial());
