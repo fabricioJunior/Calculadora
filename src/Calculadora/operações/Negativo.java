@@ -5,15 +5,17 @@
  */
 package Calculadora.operações;
 
-import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
-public class Negativo extends Operações implements IOperações  {
+public class Negativo extends Operações {
 
+    /**
+     *
+     */
     public Negativo() {
         binaria = false;
         nome = "- Negativo";

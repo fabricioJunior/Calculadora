@@ -5,15 +5,17 @@
  */
 package Calculadora.operações;
 
-import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
-public class Soma extends Operações implements IOperações  {
+public class Soma extends Operações{
 
+    /**
+     *
+     */
     public Soma() {
         binaria = true;
         nome  = "+ Soma";

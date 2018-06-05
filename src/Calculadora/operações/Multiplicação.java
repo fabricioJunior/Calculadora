@@ -5,15 +5,17 @@
  */
 package Calculadora.operações;
 
-import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
  *
  * @author Fabricio Junior
  */
-public class Multiplicação extends Operações implements IOperações {
+public class Multiplicação extends Operações {
 
+    /**
+     *
+     */
     public Multiplicação() {
         binaria = true;
         nome = "* Multiplicação";

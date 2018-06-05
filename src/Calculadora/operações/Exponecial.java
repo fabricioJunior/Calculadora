@@ -5,20 +5,32 @@
  */
 package Calculadora.operações;
 
-import Calculadora.IOperações;
 import Calculadora.Operações;
 
 /**
- *
+ *Classe responsável por fazer potência de um número 
  * @author Fabricio Junior
  */
-public class Exponecial extends Operações implements IOperações  {
+public class Exponecial extends Operações  {
 
+    /**
+     *Construto sendo utilizado para definir os valores padrão dessa operação 
+     */
     public Exponecial() {
         binaria = true;
         nome = "** Exponencial";
     }
-
+    /**
+    * 
+    * efetua a operação de exponecial num1 ^ num2 
+    * 
+    * @param num1
+    * recebe de valor a base da operação
+    * @param num2
+    * recebe o valor da potência da operação 
+     * @return  String com o resultado da operação 
+    *
+     */
     @Override
     public String operação(String num1, String num2) {
         double n1 = Double.parseDouble(num1);

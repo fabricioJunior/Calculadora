@@ -5,16 +5,17 @@
  */
 package Calculadora.operações;
 
-import Calculadora.IOperações;
 import Calculadora.Operações;
-import java.text.DecimalFormat;
 
 /**
  *
  * @author Fabricio Junior
  */
-public class Fatorial extends Operações implements IOperações {
+public class Fatorial extends Operações {
 
+    /**
+     *Construto padrão para as classes de operação
+     */
     public Fatorial() {
         binaria = false;
         nome = "! Fatorial";
