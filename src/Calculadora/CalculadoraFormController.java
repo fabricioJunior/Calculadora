@@ -73,15 +73,16 @@ public class CalculadoraFormController implements Initializable {
         IOperações selecionada = (IOperações) operaçãoBox.getSelectionModel().getSelectedItem();
         if (num1Text.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Digite um valor na primeira área de texto", "Informação", JOptionPane.INFORMATION_MESSAGE);
-        } else if (num2Text.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Digite um valor na segunda área de texto", "Informação", JOptionPane.INFORMATION_MESSAGE);
         } else {
             if (selecionada.binaria()) {
-                num2Text.setText(Filtro(num2Text.getText()));
-                if (ContemLetrasNum1() == false && ContemLetrasNum2() == false) {
-                    resultadoText.setText(selecionada.operação(num1Text.getText(), num2Text.getText()));
+                if (num2Text.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Digite um valor na segunda área de texto", "Informação", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    num2Text.setText(Filtro(num2Text.getText()));
+                    if (ContemLetrasNum1() == false && ContemLetrasNum2() == false) {
+                        resultadoText.setText(selecionada.operação(num1Text.getText(), num2Text.getText()));
+                    }
                 }
-
             } else {
                 if (!ContemLetrasNum1()) {
                     resultadoText.setText(selecionada.operação(num1Text.getText()));
