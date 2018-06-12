@@ -18,7 +18,7 @@
       <ComboBox fx:id="operaçãoBox" layoutX="109.0" layoutY="45.0" prefWidth="150.0" />
       <TextField fx:id="num2Text" layoutX="268.0" layoutY="45.0" prefHeight="25.0" prefWidth="78.0" />
       <Button fx:id="calcularBtn" layoutX="355.0" layoutY="45.0" mnemonicParsing="false" onKeyPressed="#calcularBtn_KeyPressed" onMouseClicked="#calcularBtn_Clicked" text="Calcular" />
-      <TextField fx:id="resultadoText" editable="false" layoutX="420.0" layoutY="45.0" prefHeight="25.0" prefWidth="66.0" />
+      <TextField fx:id="resultadoText" editable="false" layoutX="420.0" layoutY="45.0" prefHeight="25.0" prefWidth="66.0" promptText="Resultado" />
       <Button fx:id="usarBtn" layoutX="502.0" layoutY="45.0" mnemonicParsing="false" onKeyPressed="#usarBtn_KeyPressed" onMouseClicked="#usarBtn_Clicked" text="Usar" />
       <Label layoutX="240.0" layoutY="-3.0" text="Calculadora">
          <font>
