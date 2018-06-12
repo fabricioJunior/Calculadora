@@ -8,27 +8,28 @@ package Calculadora.operações;
 import Calculadora.Operações;
 
 /**
- *Classe responsável por fazer potência de um número 
+ * Classe responsável por fazer potência de um número
+ *
  * @author Fabricio Junior
  */
-public class Exponecial extends Operações  {
+public class Exponecial extends Operações {
 
     /**
-     *Construto sendo utilizado para definir o nome (** Exponencial) da operação e que ela é binária 
+     * Construto sendo utilizado para definir o nome (** Exponencial) da
+     * operação e que ela é binária
      */
     public Exponecial() {
-        super("** Exponencial",true ); 
+        super("** Exponencial", true);
     }
+
     /**
-    * 
-    * efetua a operação de exponecial num1 ^ num2 
-    * 
-    * @param num1
-    * recebe de valor a base da operação
-    * @param num2
-    * recebe o valor da potência da operação 
-     * @return  String com o resultado da operação 
-    *
+     *
+     * efetua a operação de exponecial num1 ^ num2
+     *
+     * @param num1 recebe de valor a base da operação
+     * @param num2 recebe o valor da potência da operação
+     * @return String com o resultado da operação
+     *
      */
     @Override
     public String operação(String num1, String num2) {

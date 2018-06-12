@@ -13,14 +13,16 @@ import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
- * Para melhor entendimento acesse
- * @link 
+ *
+ * @see
+ * <a href="https://github.com/fabricioJunior/Calculadora/blob/master/design/interfaceComentada.png">https://github.com/fabricioJunior/Calculadora/blob/master/design/interfaceComentada.png</a>
  * @author Fabricio Junior
  */
 public class CalculadoraFormController implements Initializable {
 
     /**
-     * Váriavel responsável pela área de texto 1
+     * Váriavel responsável pela área de texto 1 OBS: Para melhor entendimento
+     * aconselho a abertura do link colocado nos comentários da classe
      */
     @FXML
     private TextField num1Text;

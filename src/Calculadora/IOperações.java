@@ -12,17 +12,19 @@ public interface IOperações {
      * Método destinado a retorna o resultao em forma de String de uma operação
      * matématica não binária
      *
-     * @param num1 String que possui apenas caracteres númericos 
-     * @return resultado da operação que sera sobrescrita pelas classes que assinarão essa interface
+     * @param num1 String que possui apenas caracteres númericos
+     * @return resultado da operação que sera sobrescrita pelas classes que
+     * assinarão essa interface
      */
     abstract String operação(String num1);
 
     /**
      * Sobrecarga do método operação para operações matématicas binárias
      *
-     * @param num1 String que possui apenas caracteres númericos 
-     * @param num2 String que possui apenas caracteres númericos 
-     * @return  resultado da operação que sera sobrescrita pelas classes que assinarão essa interface
+     * @param num1 String que possui apenas caracteres númericos
+     * @param num2 String que possui apenas caracteres númericos
+     * @return resultado da operação que sera sobrescrita pelas classes que
+     * assinarão essa interface
      */
     abstract String operação(String num1, String num2);
 

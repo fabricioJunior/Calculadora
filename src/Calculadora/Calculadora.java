@@ -1,7 +1,8 @@
 package Calculadora;
 
 /**
- * Classe príncipal do programa 
+ * Classe príncipal do programa
+ *
  * @author Fabricio Junior
  */
 public class Calculadora {

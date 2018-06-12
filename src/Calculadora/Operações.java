@@ -17,6 +17,13 @@ public abstract class Operações implements IOperações {
      */
     private final String nome;
 
+    /**
+     * Construto que definira o nome da operação e se ela é binaria ou não
+     *
+     * @param nome String com o nome da operação
+     * @param binaria booleano para definir se a operação é binaria ou não (true
+     * ou false)
+     */
     public Operações(String nome, boolean binaria) {
         this.binaria = binaria;
         this.nome = nome;

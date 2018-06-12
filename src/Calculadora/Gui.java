@@ -34,6 +34,10 @@ public class Gui extends Application {
     }
 
     ///Retira exeção 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
     }
