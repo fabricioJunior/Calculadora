@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Calculadora;
 
 import java.io.IOException;
@@ -11,8 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
 /**
- *Classe responsável por  fazer a chamada da interface gráfica da calculadora 
+ * Classe responsável por fazer a chamada da interface gráfica da calculadora
+ *
  * @author Fabricio Junior
  */
 public class Gui extends Application {
@@ -29,9 +26,13 @@ public class Gui extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Método responsável exibir a interface gráfica
+     */
     public void Show() {
         launch();
     }
+
     ///Retira exeção 
     public static void main(String[] args) {
 

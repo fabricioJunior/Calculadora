@@ -1,24 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Calculadora;
 
-
-
 /**
- *
+ * Classe príncipal do programa 
  * @author Fabricio Junior
  */
 public class Calculadora {
 
     /**
      * Classe de inicializaçao do JVM
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        ///Instanciando classe responsável pela interface gráfica 
         Gui start = new Gui();
+        ///Exibindo a interface gráfica 
         start.Show();
     }
 

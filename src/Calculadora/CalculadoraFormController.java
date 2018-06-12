@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Calculadora;
 
 import Calculadora.operações.*;
@@ -18,34 +13,39 @@ import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
- * 
+ * Para melhor entendimento acesse
+ * @link 
  * @author Fabricio Junior
  */
 public class CalculadoraFormController implements Initializable {
+
     /**
-     * Váriavel responsável pela área de texto 1 
+     * Váriavel responsável pela área de texto 1
      */
     @FXML
     private TextField num1Text;
     /**
-     *  Váriavel responsável pela área de texto 2 
+     * Váriavel responsável pela área de texto 2
      */
     @FXML
     private TextField num2Text;
     /**
-     *  Váriavel responsável pela área de texto que exibira o resultado das operaões da calculadora 
+     * Váriavel responsável pela área de texto que exibira o resultado das
+     * operaões da calculadora
      */
     @FXML
     private TextField resultadoText;
     /**
-     *  Váriavel responsável pelo comboBox que responsável pelas escolha da operação a ser realizada 
+     * Váriavel responsável pelo comboBox que responsável pelas escolha da
+     * operação a ser realizada
      */
     @FXML
     private ComboBox operaçãoBox;
-    
 
     /**
-     * Sobrescrendo o método padrão  initialize do pacote FX para definir alguns atributos a alguns objetos 
+     * Sobrescrendo o método padrão initialize do pacote FX para definir alguns
+     * atributos para alguns objetos gráficos do pacote
+     *
      * @param url
      * @param rb
      */
@@ -74,35 +74,35 @@ public class CalculadoraFormController implements Initializable {
     }
 
     /**
-     *Evento de click no botão de cadastro 
+     * Evento de click no botão de cadastro
      */
     public void calcularBtn_Clicked() {
 
         num1Text.setText(Filtro(num1Text.getText()));
-        // recupero  a classe selecionada pelo usuário no comboBox  
+        //Recuperando a classe selecionada pelo usuário no comboBox  
         IOperações selecionada = (IOperações) operaçãoBox.getSelectionModel().getSelectedItem();
-        ////Verificando se existe algum valor digitado na primeira área de texto(num1Text)
+        //Verificando se existe algum valor digitado na primeira área de texto(num1Text)
         if (num1Text.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Digite um valor na primeira área de texto", "Informação", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            ///Se a operação for binaria   
+            //Se a operação for binaria   
             if (selecionada.binaria()) {
-                ///Verifica se existe algum valor digitado na segunda área de texto(num2Text)
+                //Verifica se existe algum valor digitado na segunda área de texto(num2Text)
                 if (num2Text.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Digite um valor na segunda área de texto", "Informação", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    ////Relizando o filtro de caracteres comuns indesejados 
+                    //Relizando o filtro de caracteres comuns indesejados 
                     num2Text.setText(Filtro(num2Text.getText()));
-                    ///Verifica se existe algum caractere estranho nas áreas de texto que estão destinadas a recebe números 
+                    //Verifica se existe algum caractere estranho nas áreas de texto que estão destinadas a recebe números 
                     if (ContemLetrasNum1() == false && ContemLetrasNum2() == false) {
-                        ////Passando o resultado das operações para área de texto para resultados(resultadoText)
+                        //Passando o resultado das operações para área de texto para resultados(resultadoText)
                         resultadoText.setText(selecionada.operação(num1Text.getText(), num2Text.getText()));
                     }
                 }
             } else {
-                ///Verifica se existe algum caractere estranho nas áreas de texto que está destinada a numero
+                //Verifica se existe algum caractere estranho nas áreas de texto que está destinada a numero
                 if (!ContemLetrasNum1()) {
-                    ////Passando o resultado das operações para área de texto para resultados(resultadoText)
+                    //Passando o resultado das operações para área de texto para resultados(resultadoText)
                     resultadoText.setText(selecionada.operação(num1Text.getText()));
                 }
             }
@@ -110,7 +110,8 @@ public class CalculadoraFormController implements Initializable {
     }
 
     /**
-     * Evento click no botão de  usar o resultado de uma operação para uma nova operação 
+     * Evento click no botão de usar o resultado de uma operação para uma nova
+     * operação
      */
     public void usarBtn_Clicked() {
         ///Verifica se o valor não é nulo 
@@ -121,35 +122,38 @@ public class CalculadoraFormController implements Initializable {
 
     /**
      * Evento de tecla precionada enquanto o foco está no botão usar
-     * 
-     * key é objeto que carrega as informações a tecla precionada 
+     *
+     * key é objeto que carrega as informações a tecla precionada
+     *
      * @param key
-     * 
+     *
      */
     public void usarBtn_KeyPressed(KeyEvent key) {
         if (key.getCode() == ENTER) {
             usarBtn_Clicked();
         }
     }
-     /**
-     * Evento de tecla precionada enquanto o foco está no botão calcular 
-     * 
-     * key é objeto que carrega as informações a tecla precionada 
-     * @param key
-     * 
+
+    /**
+     * Evento de tecla precionada enquanto o foco está no botão calcular
+     *
+     * @param key é um objeto que carrega as informações da tecla precionada
      */
     public void calcularBtn_KeyPressed(KeyEvent key) {
 
         if (key.getCode() == ENTER) {
             calcularBtn_Clicked();
-
         }
     }
+
     /**
-     * Função que retira virgulas na String passa no 
-     * @param digitado
-     *  e retorna um string sem virgulas onde estes estarão substituidos por pontos
-     * @return 
+     * Função que retira vírgulas( , ) na String passada e substitui por pontos(
+     * . )
+     *
+     * @param digitado Recebe String que deseja fazer o filtro do caractere de
+     * vírgula
+     * @return uma String sem vírgulas onde estes estarão substituidos por
+     * pontos
      */
     private String Filtro(String digitado) {
         char[] palavra = digitado.toCharArray();
@@ -161,12 +165,15 @@ public class CalculadoraFormController implements Initializable {
         }
         return String.valueOf(palavra);
     }
-   /**
-    * Função que verifica se na área de texto destinada ao prímeiro número não contem nenhuma letra ou caractere diferente de números e imprime na tela uma menssagem para usuário
-    * informando o erro 
-    * @return 
-    * true se contem uma letra ou caractere diferente de números 
-    */
+
+    /**
+     * Função que verifica se o TextField num1Text destinada ao prímeiro número
+     * não contem nenhuma letra ou caractere diferente de números e imprime na
+     * tela uma menssagem para usuário informando o erro
+     *
+     * @return true se contem uma letra ou caractere diferente de números
+     *
+     */
     private boolean ContemLetrasNum1() {
         float valor;
         if (num1Text.getText().length() != 0) {
@@ -180,12 +187,14 @@ public class CalculadoraFormController implements Initializable {
         }
         return false;
     }
-/**
-    * Função que verifica se na área de texto destinada ao segundo número não contem nenhuma letra ou caractere diferente de números e imprime na tela uma menssagem para usuário
-    * informando o erro 
-    * @return 
-    * true se contem uma letra ou caractere diferente de números 
-    */
+
+    /**
+     * Função que verifica se no TextField num2Text destinada ao segundo número
+     * não contem nenhuma letra ou caractere diferente de números e imprime na
+     * tela uma menssagem para usuário informando o erro
+     *
+     * @return true se contem uma letra ou caractere diferente de números
+     */
     private boolean ContemLetrasNum2() {
         float valor;
         if (num2Text.getText().length() != 0) {

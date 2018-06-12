@@ -14,11 +14,10 @@ import Calculadora.Operações;
 public class Exponecial extends Operações  {
 
     /**
-     *Construto sendo utilizado para definir os valores padrão dessa operação 
+     *Construto sendo utilizado para definir o nome (** Exponencial) da operação e que ela é binária 
      */
     public Exponecial() {
-        binaria = true;
-        nome = "** Exponencial";
+        super("** Exponencial",true ); 
     }
     /**
     * 

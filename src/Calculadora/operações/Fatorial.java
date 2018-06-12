@@ -8,19 +8,22 @@ package Calculadora.operações;
 import Calculadora.Operações;
 
 /**
- *
+ * Classe responsável pela operação não binária de fatorial 
  * @author Fabricio Junior
  */
 public class Fatorial extends Operações {
 
     /**
-     *Construto padrão para as classes de operação
+     * Construto padrão para definir atributo operação como não binaria e o nome da operação(/ Divisão)
      */
     public Fatorial() {
-        binaria = false;
-        nome = "! Fatorial";
+        super("! Fatorial",false);
     }
-
+    /**
+     * Definindo operação não binaria que recebe um número qualquer e efetua a operação de fatorial
+     * @param num1
+     * @return fatorial de num1 
+     */
     @Override
     public String operação(String num1) {
         long retorno = 1;
