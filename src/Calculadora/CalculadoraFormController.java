@@ -125,9 +125,9 @@ public class CalculadoraFormController implements Initializable {
     /**
      * Evento de tecla precionada enquanto o foco está no botão usar
      *
-     * key é objeto que carrega as informações a tecla precionada
+     * 
      *
-     * @param key
+     * @param key é um objeto que carrega as informações da tecla precionada
      *
      */
     public void usarBtn_KeyPressed(KeyEvent key) {
