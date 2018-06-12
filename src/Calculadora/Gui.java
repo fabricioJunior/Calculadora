@@ -11,10 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 /**
- *
+ *Classe responsável por  fazer a chamada da interface gráfica da calculadora 
  * @author Fabricio Junior
  */
 public class Gui extends Application {
@@ -26,6 +24,7 @@ public class Gui extends Application {
         );
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        ///Definindo posição de inicialização no centro da tela 
         primaryStage.centerOnScreen();
         primaryStage.show();
     }
@@ -33,8 +32,7 @@ public class Gui extends Application {
     public void Show() {
         launch();
     }
-
-    ///Retira exeção
+    ///Retira exeção 
     public static void main(String[] args) {
 
     }

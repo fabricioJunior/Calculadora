@@ -14,6 +14,7 @@ package Calculadora;
 public class Calculadora {
 
     /**
+     * Classe de inicializaçao do JVM
      * @param args the command line arguments
      */
     public static void main(String[] args) {
